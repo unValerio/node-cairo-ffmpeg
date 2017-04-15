@@ -1,0 +1,1 @@
+Docker image with Node 4.8.2, Cairo and FFMPEG
