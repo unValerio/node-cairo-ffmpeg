@@ -2,9 +2,6 @@ FROM node:argon
 
 WORKDIR /tmp
 
-# Instalar Cairo-Pango
-RUN apt-get update && apt-get -y install libcairo2-dev libturbojpeg-dev libpango1.0-dev libgif-dev build-essential g++
-
 # Instalar FFMPEG
 ENV         FFMPEG_VERSION=3.2.4     \
             FDKAAC_VERSION=0.1.5      \
@@ -213,3 +210,9 @@ RUN      buildDeps="autoconf \
         apt-get clean -y && \
         rm -rf /var/lib/apt/lists && \
         ffmpeg -buildconf
+
+# Instalar Cairo-Pango
+RUN apt-get update && apt-get -y install libcairo2-dev libturbojpeg-dev libpango1.0-dev libgif-dev build-essential g++
+
+# Instal Git
+RUN apt-get update && apt-get install -y git-core
